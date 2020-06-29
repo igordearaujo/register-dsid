@@ -14,6 +14,18 @@ const UserSchema = new mongoose.Schema({
         type: String,
         require: false,
     },
+    monthOfBirth: {
+        type: Number,
+        require: false,
+    },
+    yearOfBirth: {
+        type: Number,
+        require: false,
+    },
+    dayOfBirth: {
+        type: Number,
+        require: false,
+    },
     phoneNumber: {
         type: Number,
         require: false,
