@@ -59,4 +59,14 @@ router.post('/authenticate', async (req, res) => {
 
 })
 
+router.get('/users/:userId', async (req, res) => {
+
+    user.password = undefined
+
+    res.send({ 
+        user
+    })
+
+})
+
 module.exports = app => app.use('/auth', router)
