@@ -8,19 +8,15 @@ const UserSchema = new mongoose.Schema({
     },
     surname: {
         type: String,
-        require: true
-    },
-    birthDate: {
-        type: Date,
-        require: true
+        require: true,
     },
     gender: {
         type: String,
-        require: false
+        require: false,
     },
     phoneNumber: {
         type: Number,
-        require: false
+        require: false,
     },
     email: {
         type: String,
@@ -35,7 +31,7 @@ const UserSchema = new mongoose.Schema({
     },
     createdAt: {
         type: Date,
-        default: Date.now()
+        default: Date.now(),
     }
 
 })
