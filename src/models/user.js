@@ -16,10 +16,14 @@ const UserSchema = new mongoose.Schema({
     },
     monthOfBirth: {
         type: Number,
+        min: 1,
+        max: 12,
         require: false,
     },
     yearOfBirth: {
         type: Number,
+        min: 1900,
+        max: 2002,
         require: false,
     },
     dayOfBirth: {
