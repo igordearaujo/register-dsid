@@ -15,7 +15,7 @@ router.get('/:accommodationOrderId', async (req, res) => {
     res.send({ user: req.userId })
 })
 
-router.post('/:accommodationOrder/create', async (req, res) => {
+router.post('/', async (req, res) => {
     res.send({ user: req.userId })
 })
 
