@@ -10,6 +10,6 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 
 require('./controllers/authController')(app)
-require('./controllers/projectController')(app)
+require('./controllers/accommodationController')(app)
 
 app.listen(process.env.PORT || 3000)
