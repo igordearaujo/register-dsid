@@ -9,7 +9,7 @@ router.use(authMiddleware)
 
 router.get('/', async (req, res) => {
     try {
-        const accommodationOrders = await AccommodationOrder.find().populate('user')
+        const accommodationOrders = await AccommodationOrder.find().populate(['user', 'accommodationorder'])
 
         return res.send({ accommodationOrders })
         
