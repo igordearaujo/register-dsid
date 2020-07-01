@@ -6,10 +6,6 @@ const AccommodationOrderSchema = new mongoose.Schema({
         type: String,
         require: true,
     },
-    id: {
-        type: Number,
-        require: true,
-    },
     pricePerNight: {
         type: Number,
         require: true,
