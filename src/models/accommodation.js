@@ -8,8 +8,7 @@ const AccommodationOrderSchema = new mongoose.Schema({
     },
     id: {
         type: Number,
-        require: true,
-        unique: true,
+        require: true
     },
     pricePerNight: {
         type: Number,
