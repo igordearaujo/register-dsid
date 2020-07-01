@@ -53,7 +53,7 @@ router.put('/:accommodationOrderId', async (req, res) => {
 
 router.delete('/:accommodationOrderId', async (req, res) => {
     try {
-        await AccommodationOrder.findById(req.params.accommodationOrderId)
+        await AccommodationOrder.findByIdAndRemove(req.params.accommodationOrderId)
 
         
         return res.send('Removido com sucesso!')
