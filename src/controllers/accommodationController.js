@@ -7,9 +7,9 @@ const router = express.Router()
 
 router.use(authMiddleware)
 
-router.get('/', (req, res) => {
+router.get('/', async (req, res) => {
     try {
-        const accommodationOrders = await AccommodationOrders.find()
+        const accommodationOrders = await AccommodationOrder.find()
 
         return res.send({ accommodationOrders })
         
