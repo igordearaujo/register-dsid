@@ -30,12 +30,12 @@ const AccommodationOrderSchema = new mongoose.Schema({
 
 })
 
-// AccommodationOrderSchema.pre('save', async function(next){
-//     const hash = await bcrypt.hash(this.id, 10)
-//     this.id = hash
+AccommodationOrderSchema.pre('save', async function(next){
+    const hash = await bcrypt.hash(this.id, 10)
+    this.id = hash
 
-//     next()
-// })
+    next()
+})
 
 const AccommodationOrder = mongoose.model('AccommodationOrder', AccommodationOrderSchema)
 
