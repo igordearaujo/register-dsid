@@ -8,7 +8,15 @@ const router = express.Router()
 router.use(authMiddleware)
 
 router.get('/', (req, res) => {
-    res.send({ ok: true, user: req.userId })
+    try {
+        const accommodationOrders = await AccommodationOrder.find()
+
+        return res.send({ accommodationOrders })
+        
+    } catch (err){
+        return res.status(400).send({ error: 'Erro ao criar novo pedido' })
+    }
+
 })
 
 router.get('/:accommodationOrderId', async (req, res) => {
