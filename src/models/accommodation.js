@@ -22,11 +22,6 @@ const AccommodationOrderSchema = new mongoose.Schema({
     assignedTo: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
-        require: true,
-    },
-    userName: {
-        type: mongoose.Schema.Type.User.name,
-        ref: 'User',
     },
     createdAt: {
         type: Date,
