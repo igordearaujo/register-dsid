@@ -8,11 +8,11 @@ const AccommodationOrderSchema = new mongoose.Schema({
     },
     id: {
         type: Number,
-        require: true
+        require: true,
     },
     pricePerNight: {
         type: Number,
-        require: true
+        require: true,
     },
     priceTotal: {
         type: Number,
