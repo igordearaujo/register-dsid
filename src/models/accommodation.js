@@ -24,6 +24,10 @@ const AccommodationOrderSchema = new mongoose.Schema({
         ref: 'User',
         require: true,
     },
+    userName: {
+        type: mongoose.Schema.Type.User.name,
+        ref: 'User',
+    },
     createdAt: {
         type: Date,
         default: Date.now(),
