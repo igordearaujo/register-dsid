@@ -9,6 +9,7 @@ const AccommodationOrderSchema = new mongoose.Schema({
     id: {
         type: Number,
         require: true,
+        unique: true,
     },
     pricePerNight: {
         type: Number,
@@ -32,8 +33,6 @@ const AccommodationOrderSchema = new mongoose.Schema({
 AccommodationOrderSchema.pre('save', async function(next){
     const hash = await bcrypt.hash(this.id, 10)
     this.id = hash
-
-    next()
 })
 
 const AccommodationOrder = mongoose.model('AccommodationOrder', AccommodationOrderSchema)
