@@ -20,6 +20,7 @@ router.post('/', async (req, res) => {
         const accommodationOrder = await AccommodationOrder.create(req.body)
 
         return res.send({ accommodationOrder })
+        
     } catch (err){
         return res.status(400).send({ error: 'Erro ao criar novo pedido' })
     }
