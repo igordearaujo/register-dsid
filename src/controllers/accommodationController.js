@@ -32,9 +32,6 @@ router.get('/:accommodationOrderId', async (req, res) => {
 
 })
 
-router.get('/:accommodationOrderId', async (req, res) => {
-    res.send({ user: req.userId })
-})
 router.post('/', async (req, res) => {
     try {
         const accommodationOrder = await AccommodationOrder.create({ ...req.body, user: req.userId })
@@ -45,10 +42,6 @@ router.post('/', async (req, res) => {
         return res.status(400).send({ error: 'Erro ao criar novo pedido' })
     }
 
-})
-
-router.put('/:accommodationOrderId', async (req, res) => {
-    res.send({ user: req.userId })
 })
 
 router.delete('/:accommodationOrderId', async (req, res) => {
