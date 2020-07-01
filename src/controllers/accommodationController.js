@@ -9,7 +9,7 @@ router.use(authMiddleware)
 
 router.get('/', async (req, res) => {
     try {
-        const accommodationOrders = await AccommodationOrder.find()
+        const accommodationOrders = await AccommodationOrder.find().populate('user')
 
         return res.send({ accommodationOrders })
         
@@ -25,7 +25,7 @@ router.get('/:accommodationOrderId', async (req, res) => {
 
 router.post('/', async (req, res) => {
     try {
-        const accommodationOrder = await AccommodationOrder.create(req.body)
+        const accommodationOrder = await AccommodationOrder.create({ ...req.body, user: req.userId })
 
         return res.send({ accommodationOrder })
         
