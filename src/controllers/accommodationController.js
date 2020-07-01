@@ -9,7 +9,7 @@ router.use(authMiddleware)
 
 router.get('/', (req, res) => {
     try {
-        const accommodationOrders = await AccommodationOrder.find()
+        const accommodationOrders = await AccommodationOrders.find()
 
         return res.send({ accommodationOrders })
         
