@@ -23,6 +23,7 @@ router.get('/:accommodationOrderId', async (req, res) => {
     try {
         const accommodationOrder = await AccommodationOrder.findById(req.params.accommodationOrderId).populate('user')
 
+
         return res.send({ accommodationOrder })
         
     } catch (err){
@@ -51,7 +52,16 @@ router.put('/:accommodationOrderId', async (req, res) => {
 })
 
 router.delete('/:accommodationOrderId', async (req, res) => {
-    res.send({ user: req.userId })
+    try {
+        await AccommodationOrder.findById(req.params.accommodationOrderId).populate('user')
+
+        
+        return res.send('Removido com sucesso!')
+        
+    } catch (err){
+        return res.status(400).send({ error: 'Erro ao remover pedido' })
+    }
+
 })
 
 
