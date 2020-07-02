@@ -60,7 +60,7 @@ router.post('/authenticate', async (req, res) => {
 })
 
 router.get('/users/:userId', async (req, res) => {
-    const user = await User.findById(req.params.userId).populated('user');
+    const user = await User.findById(_id).populated('user');
 
     user.password = undefined
 
