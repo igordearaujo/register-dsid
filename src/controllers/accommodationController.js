@@ -1,7 +1,7 @@
 const express = require('express')
 const authMiddleware = require('../middlewares/auth')
 
-const AccommodationOrder = require('../models/accommodation')
+const AccommodationOrder = require('../models/accommodation_simple')
 
 const router = express.Router()
 
