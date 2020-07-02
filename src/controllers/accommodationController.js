@@ -29,10 +29,33 @@ router.get('/:accommodationOrderId', async (req, res) => {
     } catch (err){
         return res.status(400).send({ error: 'Erro ao buscar pedido' })
     }
+})
 
+router.get('/byuser/:userId', async (req, res) => {
+    try {
+        const accommodationOrder = await AccommodationOrder.findById(req.params.userId).populate('AccommodationOrder')
+
+
+        return res.send({ accommodationOrder })
+        
+    } catch (err){
+        return res.status(400).send({ error: 'Erro ao buscar pedido' })
+    }
 })
 
 router.post('/', async (req, res) => {
+    try {
+        const accommodationOrder = await AccommodationOrder.create(req.body)
+
+        return res.send({ accommodationOrder })
+        
+    } catch (err){
+        return res.status(400).send({ error: 'Erro ao criar novo pedido' })
+    }
+
+})
+
+router.put('/', async (req, res) => {
     try {
         const accommodationOrder = await AccommodationOrder.create(req.body)
 
