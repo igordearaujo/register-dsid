@@ -14,20 +14,8 @@ const UserSchema = new mongoose.Schema({
         type: String,
         require: false,
     },
-    monthOfBirth: {
-        type: Number,
-        min: 1,
-        max: 12,
-        require: false,
-    },
-    yearOfBirth: {
-        type: Number,
-        min: 1900,
-        max: 2002,
-        require: false,
-    },
-    dayOfBirth: {
-        type: Number,
+    birthDate: {
+        type: Date,
         require: false,
     },
     phoneNumber: {
