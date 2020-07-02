@@ -34,7 +34,7 @@ router.get('/:accommodationOrderId', async (req, res) => {
 
 router.post('/', async (req, res) => {
     try {
-        const accommodationOrder = await AccommodationOrder.create({ ...req.body, user: req.userId })
+        const accommodationOrder = await AccommodationOrder.create(req.body)
 
         return res.send({ accommodationOrder })
         
