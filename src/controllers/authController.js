@@ -64,7 +64,7 @@ router.get('/users/:userId', async (req, res) => {
 
     user.password = undefined
 
-    res.send({ user })
+    res.send({ userInfos })
 
 })
 
