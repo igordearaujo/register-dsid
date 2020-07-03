@@ -5,7 +5,7 @@ const AccommodationOrder = require('../models/accommodation_simple')
 
 const router = express.Router()
 
-router.use(authMiddleware)
+// router.use(authMiddleware)
 
 router.get('/', async (req, res) => {
     try {
