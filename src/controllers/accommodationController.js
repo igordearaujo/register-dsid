@@ -33,7 +33,7 @@ router.get('/:accommodationOrderId', async (req, res) => {
 
 router.get('/byuser/:userId', async (req, res) => {
     try {
-        const accommodationOrder = await AccommodationOrder.find().populate('AccommodationOrder')
+        const accommodationOrder = await AccommodationOrder.find({ userId }).populate('AccommodationOrder')
 
 
         return res.send({ accommodationOrder })
