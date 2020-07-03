@@ -14,7 +14,7 @@ const AccommodationOrderSchema = new mongoose.Schema({
         type: Number,
         require: true,
     },
-    userId: {
+    _userId: {
         type: String,
         require: true,
     },
