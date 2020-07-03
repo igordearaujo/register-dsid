@@ -2,6 +2,10 @@ const mongoose = require('../database')
 const bcrypt = require('bcryptjs')
 
 const AccommodationOrderSchema = new mongoose.Schema({
+    name: {
+        type: String,
+        require: true
+    },
     accommodationId: {
         type: String,
         require: true,
