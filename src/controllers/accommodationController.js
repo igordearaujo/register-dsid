@@ -33,7 +33,7 @@ router.get('/:accommodationOrderId', async (req, res) => {
 
 router.get('/byuser/:userId', async (req, res) => {
     try {
-        const accommodationOrder = await AccommodationOrder.findById(req.params.userId)
+        const accommodationOrder = await AccommodationOrder.findById(req.params.AccommodationOrder.userId)
 
 
         return res.send({ accommodationOrder })
@@ -57,7 +57,11 @@ router.post('/', async (req, res) => {
 
 router.put('/', async (req, res) => {
     try {
-        const accommodationOrder = await AccommodationOrder.create(req.body)
+        const accommodationOrder = await AccommodationOrder.findByIdAndUpdate(req.params.accommodationOrderId, {
+            pricePerNight,
+            priceTotal,
+            accommodationId
+        }, { new: true })
 
         return res.send({ accommodationOrder })
         
