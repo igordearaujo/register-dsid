@@ -31,9 +31,9 @@ router.get('/:accommodationOrderId', async (req, res) => {
     }
 })
 
-router.get('/byuser/:userId', async (req, res) => {
+router.post('/byuser/', async (req, res) => {
     try {
-        const accommodationOrder = await AccommodationOrder.find({ userId }).populate('AccommodationOrder')
+        const accommodationOrder = await AccommodationOrder.find(req.body).populate('AccommodationOrder')
 
 
         return res.send({ accommodationOrder })
