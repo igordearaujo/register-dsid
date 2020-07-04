@@ -20,7 +20,7 @@ router.post('/register', async (req, res) =>{
 
     try {
         if(await User.findOne( { email } )){
-            return res.status(400).send({ status: '400', message: 'Usuário já existe' })
+            return res.status(406).send({ status: '406', message: 'Usuário já existe' })
         }
 
         const user = await User.create(req.body)
