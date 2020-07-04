@@ -25,7 +25,7 @@ router.post('/register', async (req, res) =>{
 
         const user = await User.create(req.body)
 
-        user.password = undefined
+        // user.password = undefined
 
         return res.send({ 
             user,
@@ -37,32 +37,32 @@ router.post('/register', async (req, res) =>{
     }
 })
 
-router.post('/authenticate', async (req, res) => {
-    const { email, password } = req.body
+// router.post('/authenticate', async (req, res) => {
+//     const { email, password } = req.body
 
-    const user = await User.findOne({ email }).select('+password')
+//     const user = await User.findOne({ email }).select('+password')
 
-    if(!user){
-        return res.status(400).send({ error: 'Usuário não encontrado '})
-    }
+//     if(!user){
+//         return res.status(400).send({ error: 'Usuário não encontrado '})
+//     }
 
-    if(!await bcrypt.compare(password, user.password)){
-        return res.status(400).send({ error: 'Senha Incorreta'})
-    }
+//     if(!await bcrypt.compare(password, user.password)){
+//         return res.status(400).send({ error: 'Senha Incorreta'})
+//     }
 
-    user.password = undefined
+//     user.password = undefined
 
-    res.send({ 
-        user,
-        token: generateToken({ id: user.id })
-    })
+//     res.send({ 
+//         user,
+//         token: generateToken({ id: user.id })
+//     })
 
-})
+// })
 
 router.get('/users/:userId', async (req, res) => {
     const user = await User.findById(_id).populated('user');
 
-    user.password = undefined
+    // user.password = undefined
 
     res.send({ user })
 
