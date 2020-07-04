@@ -28,11 +28,6 @@ const UserSchema = new mongoose.Schema({
         require: true,
         lowercase: true,
     },
-    // password: {
-    //     type: String,
-    //     require: true,
-    //     select: false,
-    // },
     createdAt: {
         type: Date,
         default: Date.now(),
