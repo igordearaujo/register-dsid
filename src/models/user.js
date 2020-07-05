@@ -28,6 +28,11 @@ const UserSchema = new mongoose.Schema({
         require: true,
         lowercase: true,
     },
+    password: {
+        type: String,
+        require: true,
+        select: false,
+    },
     createdAt: {
         type: Date,
         default: Date.now(),
@@ -35,12 +40,12 @@ const UserSchema = new mongoose.Schema({
 
 })
 
-// UserSchema.pre('save', async function(next){
-//     const hash = await bcrypt.hash(this.password, 10)
-//     this.password = hash
+UserSchema.pre('save', async function(next){
+    const hash = await bcrypt.hash(this.password, 10)
+    this.password = hash
 
-//     next()
-// })
+    next()
+})
 
 const User = mongoose.model('User', UserSchema)
 
