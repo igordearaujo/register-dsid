@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 mongoose.Promise = global.Promise
 
 mongoose.connect(
-    process.env.APP_URL,
+    process.env.MONGO_URL,
     {
     useNewUrlParser: true,
     useUnifiedTopology: true,
